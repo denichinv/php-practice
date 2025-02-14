@@ -11,14 +11,26 @@
         <input type="text" name="username"> <br>
         <label for="password">Password:</label>
         <input type="password"  name="password"> <br>
-       <input type="submit" value="Log in">
+       <input type="submit" value="Log in" name="login"><br>
 
     </form>
 </body>
 </html>
 
 <?php
-echo $_POST["username"] . "<br>";
-echo $_POST["password"] . "<br>";
 
+if(isset($_POST["login"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    if(empty($username)){
+        echo "Please Enter a Username!";
+}
+elseif(empty($password)){
+    echo "Please Enter a Password";
+}
+else{   
+echo"Hello, $username!";
+}
+}
 ?>
